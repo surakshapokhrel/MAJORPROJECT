@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedies for Corn Diseases</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div id="remedies-container">
+        <h1>Remedies for <span id="Common-rust"></span></h1>
+        <p id="remedies-text"></p>
+        <button onclick="goBack()">Back to Home</button>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const disease = urlParams.get('disease');
+
+        const remedies = {
+            "Disease1": "Use fungicides like XYZ and improve irrigation.",
+            "Disease2": "Apply nitrogen fertilizers and remove infected leaves.",
+            "Disease3": "Use resistant seeds and rotate crops.",
+            "Disease4": "Spray pesticide ABC and avoid waterlogging."
+        };
+
+        document.getElementById('disease-name').innerText = disease;
+        document.getElementById('remedies-text').innerText = remedies[disease] || "No remedies available.";
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
