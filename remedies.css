@@ -1,0 +1,72 @@
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+.content {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.remedy-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+.remedy-text li {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.remedy-text li::before {
+    content: "✔ ";
+    color: #4CAF50;
+    font-weight: bold;
+}
+.remedy-text b {
+    font-size: 20px;
+    color: #4CAF50;
+}
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+.button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+}

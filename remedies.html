@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corn Disease Remedies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Merriweather', serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            width: 100%;
+            background-color: #013220;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            flex: 1; /* Push footer to the bottom */
+        }
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #013220;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            text-align: center;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            max-width: 180px;
+        }
+        .button:hover {
+            background-color: #026b3a;
+            transform: translateY(-3px);
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #013220;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        .back-button:hover {
+            background-color: #026b3a;
+            transform: translateY(-3px);
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            background-color: #013220;
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+            position: sticky;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Select a Disease to View Remedy</h1>
+    </header>
+    <div class="container">
+        <div class="button-row">
+            <button class="button" onclick="window.location.href='remedy_common_rust.html'">Common Rust</button>
+            <button class="button" onclick="window.location.href='remedy_blight_spot.html'">Northern Blight</button>
+            <button class="button" onclick="window.location.href='remedy_gray_leaf.html'">Gray Leaf spot</button>
+            <button class="button" onclick="window.location.href='remedy_northern_rust.html'">Southern Blight</button>
+        </div>
+        <button class="back-button" onclick="window.location.href='index.html'">Go Back to Home Page</button>
+    </div>
+    <footer>
+        &copy; 2024 Agricultural Tips. All Rights Reserved.
+    </footer>
+</body>
+</html>

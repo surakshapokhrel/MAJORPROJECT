@@ -8,13 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="icon" href="../static/leaf.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/leaf.png" type="image/x-icon">
 </head>
 
 <body>
-    
-    <div class="container"><img src="../static/corn.webp" id="right"></div>
+    <div class="container">
+        <img src="./assets/corn.webp" id="right">
+    </div>
     <div class="heading">
         CORN PLANT DISEASE DETECTOR
     </div>
@@ -25,68 +26,34 @@
     <div class="inner">
         <form id="analysis-form" enctype="multipart/form-data">
             <div class="imgbox">
-                <div class="imgbox"><img src="../static/cartoonimg.jpg" class="img" id="selected_image">
+                <div class="imgbox">
+                    <img src="./assets/cartoonimg.jpg" class="img" id="selected_image">
                     <div class="middle">
-                <!-- Add a video element for webcam capture -->
-                <video id="videoElement" autoplay></video>
-                <div class="middle">
-                    <div class="add"><span>Click to Capture Image</span></div>
-                    <button type="button" id="captureButton">Capture</button> <!-- Capture button -->
+                        <!-- Add a video element for webcam capture -->
+                        <video id="videoElement" autoplay></video>
+                        <div class="middle">
+                            <div class="add"><span>Click to Capture Image</span></div>
+                            <button type="button" id="captureButton">Capture</button> <!-- Capture button -->
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Hidden file input to allow the user to upload an image -->
+            <input type="file" id="imagefile" accept="image/*" style="display:none" />
+
             <button id="analyze-button" class="analyze-button">
                 <span>Analyze</span>
             </button>
         </form>
-        <div id="result"><b>Result</b></div>
-    </div>
 
-    <script src="../static/client.js"></script>
+        <div id="result"><a href="./remedies.html"><button id="remedies-button" class="remedies-button" >Remedies for Diseases</button></link></div>
+
+
+    <script src="./app.js"></script>
+
     <script>
-        // Access the webcam
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                const video = document.getElementById('videoElement');
-                video.srcObject = stream;
-                video.play();
-            })
-            .catch(err => {
-                console.error("Error accessing webcam: ", err);
-            });
-
-        // Capture image from the webcam
-        document.getElementById('captureButton').addEventListener('click', function() {
-            const canvas = document.createElement('canvas');
-            const video = document.getElementById('videoElement');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            const context = canvas.getContext('2d');
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-            const imageData = canvas.toDataURL('image/jpeg'); // Capture image as Base64
-
-            sendImageToBackend(imageData);
-        });
-
-        // Send captured image to backend for analysis
-        function sendImageToBackend(imageData) {
-            fetch('http://your-backend-url/analyze', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ image: imageData }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                displayResult(data.result); // Display result from backend
-            })
-            .catch(err => console.error("Error analyzing image: ", err));
-        }
-
-        // Display the result on the webpage
-        function displayResult(result) {
-            document.getElementById('result').innerText = `Result: ${result}`;
-        }
+       
     </script>
 </body>
 
